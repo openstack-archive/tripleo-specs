@@ -1,0 +1,7 @@
+[run]
+branch = True
+source = tripleo-specs
+omit = tripleo-specs/tests/*,tripleo-specs/openstack/*
+
+[report]
+ignore-errors = True
