@@ -16,6 +16,27 @@ import docutils.core
 import testtools
 
 
+TITLES = {
+    'Problem description': [],
+    'Proposed change': [
+        'Alternatives',
+        'Security impact',
+        'Other end user impact',
+        'Performance Impact',
+        'Other deployer impact',
+        'Developer impact',
+    ],
+    'Implementation': [
+        'Assignee(s)',
+        'Work Items',
+    ],
+    'Dependencies': [],
+    'Testing': [],
+    'Documentation Impact': [],
+    'References': [],
+}
+
+
 class TestTitles(testtools.TestCase):
     def _get_title(self, section_tree):
         section = {
@@ -25,6 +46,7 @@ class TestTitles(testtools.TestCase):
             if node.tagname == 'title':
                 section['name'] = node.rawsource
             elif node.tagname == 'section':
+                # Note subsection subtitles are thrown away
                 subsection = self._get_title(node)
                 section['subtitles'].append(subsection['name'])
         return section
@@ -38,43 +60,7 @@ class TestTitles(testtools.TestCase):
         return titles
 
     def _check_titles(self, titles):
-        self.assertEqual(7, len(titles))
-
-        problem = 'Problem description'
-        self.assertIn(problem, titles)
-        self.assertEqual(0, len(titles[problem]))
-
-        proposed = 'Proposed change'
-        self.assertIn(proposed, titles)
-        self.assertEqual(6, len(titles[proposed]))
-        self.assertIn('Alternatives', titles[proposed])
-        self.assertIn('Security impact', titles[proposed])
-        self.assertIn('Other end user impact', titles[proposed])
-        self.assertIn('Performance Impact', titles[proposed])
-        self.assertIn('Other deployer impact', titles[proposed])
-        self.assertIn('Developer impact', titles[proposed])
-
-        impl = 'Implementation'
-        self.assertIn(impl, titles)
-        self.assertEqual(2, len(titles[impl]))
-        self.assertIn('Assignee(s)', titles[impl])
-        self.assertIn('Work Items', titles[impl])
-
-        deps = 'Dependencies'
-        self.assertIn(deps, titles)
-        self.assertEqual(0, len(titles[deps]))
-
-        testing = 'Testing'
-        self.assertIn(testing, titles)
-        self.assertEqual(0, len(titles[testing]))
-
-        docs = 'Documentation Impact'
-        self.assertIn(docs, titles)
-        self.assertEqual(0, len(titles[docs]))
-
-        refs = 'References'
-        self.assertIn(refs, titles)
-        self.assertEqual(0, len(titles[refs]))
+        self.assertEqual(TITLES, titles)
 
     def test_template(self):
         files = ['specs/template.rst'] + glob.glob('specs/*/*')
