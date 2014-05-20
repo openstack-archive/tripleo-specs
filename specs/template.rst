@@ -34,7 +34,7 @@ Some notes about using this template:
   http://rst.ninjs.org
 
 
-Problem description
+Problem Description
 ===================
 
 A detailed description of the problem:
@@ -46,7 +46,7 @@ A detailed description of the problem:
   problems in that feature that are being addressed.
 
 
-Proposed change
+Proposed Change
 ===============
 
 Here is where you cover the change you propose to make in detail. How do you
@@ -62,7 +62,7 @@ What other ways could we do this thing? Why aren't we using those? This doesn't
 have to be a full literature review, but it should demonstrate that thought has
 been put into why the proposed solution is an appropriate one.
 
-Security impact
+Security Impact
 ---------------
 
 Describe any potential security impact on the system.  Some of the items to
@@ -88,7 +88,7 @@ guidelines are a work in progress and are designed to help you identify
 security best practices.  For further information, feel free to reach out
 to the OpenStack Security Group at openstack-security@lists.openstack.org.
 
-Other end user impact
+Other End User Impact
 ---------------------
 
 Are there ways a user will interact with this feature?
@@ -105,7 +105,7 @@ Examples of things to consider here include:
 * A small change in a utility function or a commonly used decorator can have a
   large impacts on performance.
 
-Other deployer impact
+Other Deployer Impact
 ---------------------
 
 Discuss things that will affect how you deploy and configure OpenStack
@@ -127,7 +127,7 @@ that have not already been mentioned, such as:
   we have a special case in the code? Do we assume that the operator will
   recreate all the instances in their cloud?
 
-Developer impact
+Developer Impact
 ----------------
 
 Discuss things that will affect other developers working on OpenStack.

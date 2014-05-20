@@ -17,14 +17,14 @@ import testtools
 
 
 TITLES = {
-    'Problem description': [],
-    'Proposed change': [
+    'Problem Description': [],
+    'Proposed Change': [
         'Alternatives',
-        'Security impact',
-        'Other end user impact',
+        'Security Impact',
+        'Other End User Impact',
         'Performance Impact',
-        'Other deployer impact',
-        'Developer impact',
+        'Other Deployer Impact',
+        'Developer Impact',
     ],
     'Implementation': [
         'Assignee(s)',
