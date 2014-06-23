@@ -8,6 +8,8 @@
 Haproxy ports and related services configuration
 ================================================
 
+Blueprint: https://blueprints.launchpad.net/tripleo/+spec/tripleo-haproxy-configuration
+
 Current spec provides options for HA endpoints delivery via haproxy.
 
 
@@ -53,7 +55,7 @@ node_address = 192.0.2.24
    connect 127.0.0.1:80
 
 3. horizon
-   bind 127.0.0.1:8800
+   bind 127.0.0.1:80
 
 
 Alternatives
@@ -144,7 +146,7 @@ Work Items
 ----------
 
 tripleo-incubator:
-* build overcloud-controler image with haproxy element
+* build overcloud-control image with haproxy element
 
 tripleo-image-elements:
 
@@ -165,7 +167,7 @@ None
 
 Testing
 =======
-CI testing dependendcies:
+CI testing dependencies:
 
 * use vip endpoints in overcloud scripts
 
