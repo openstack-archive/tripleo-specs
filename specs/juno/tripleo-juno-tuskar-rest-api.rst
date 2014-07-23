@@ -145,13 +145,13 @@ Response Example:
 .. code-block:: json
 
  {
-   "id" : "dd4ef003-c855-40ba-b5a6-3fe4176a069e",
+   "uuid" : "dd4ef003-c855-40ba-b5a6-3fe4176a069e",
    "name" : "dev-cloud",
    "description" : "Development testing cloud",
    "last_modified" : "2014-05-28T21:11:09Z",
    "roles" : [
      {
-       "id" : "55713e6a-79f5-42e1-aa32-f871b3a0cb64",
+       "uuid" : "55713e6a-79f5-42e1-aa32-f871b3a0cb64",
        "name" : "compute",
        "version" : "1",
        "links" : {
@@ -160,7 +160,7 @@ Response Example:
        }
      },
      {
-       "id" : "2ca53130-b9a4-4fa5-86b8-0177e8507803",
+       "uuid" : "2ca53130-b9a4-4fa5-86b8-0177e8507803",
        "name" : "controller",
        "version" : "1",
        "links" : {
@@ -179,7 +179,7 @@ Response Example:
    ],
    "links" : [
      {
-        "href" : "http://server/v2/clouds/dd4ef003-c855-40ba-b5a6-3fe4176a069e/",
+        "href" : "http://server/v2/plans/dd4ef003-c855-40ba-b5a6-3fe4176a069e/",
         "rel" : "self"
      }
    ]
@@ -251,20 +251,20 @@ Response Example:
 
   [
      {
-       "id" : "3e61b4b2-259b-4b91-8344-49d7d6d292b6",
+       "uuid" : "3e61b4b2-259b-4b91-8344-49d7d6d292b6",
        "name" : "dev-cloud",
        "description" : "Development testing cloud",
        "links" : {
-         "href" : "http://server/v2/clouds/3e61b4b2-259b-4b91-8344-49d7d6d292b6/",
+         "href" : "http://server/v2/plans/3e61b4b2-259b-4b91-8344-49d7d6d292b6/",
          "rel" : "bookmark"
        }
      },
      {
-       "id" : "135c7391-6c64-4f66-8fba-aa634a86a941",
+       "uuid" : "135c7391-6c64-4f66-8fba-aa634a86a941",
        "name" : "qe-cloud",
        "description" : "QE testing cloud",
        "links" : {
-         "href" : "http://server/v2/clouds/135c7391-6c64-4f66-8fba-aa634a86a941/",
+         "href" : "http://server/v2/plans/135c7391-6c64-4f66-8fba-aa634a86a941/",
          "rel" : "bookmark"
        }
      }
@@ -380,7 +380,8 @@ Request Example:
 .. code-block:: json
 
  {
-   "id" : "651c26f6-63e2-4e76-9b60-614b51249677"
+   "name" : "compute",
+   "version" : "2"
  }
 
 Response Codes:
@@ -507,19 +508,19 @@ Response Example:
 
  [
    {
-     "id" : "3d46e510-6a63-4ed1-abd0-9306a451f8b4",
+     "uuid" : "3d46e510-6a63-4ed1-abd0-9306a451f8b4",
      "name" : "compute",
      "version" : "1",
      "description" : "Nova Compute"
    },
    {
-     "id" : "71d6c754-c89c-4293-9d7b-c4dcc57229f0",
+     "uuid" : "71d6c754-c89c-4293-9d7b-c4dcc57229f0",
      "name" : "compute",
      "version" : "2",
      "description" : "Nova Compute"
    },
    {
-     "id" : "651c26f6-63e2-4e76-9b60-614b51249677",
+     "uuid" : "651c26f6-63e2-4e76-9b60-614b51249677",
      "name" : "controller",
      "version" : "1",
      "description" : "Controller Services"
