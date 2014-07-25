@@ -26,7 +26,7 @@ Problem Description
 .. note:: The terminology used in this specification is defined in the `Tuskar
           REST API`_ specification.
 
-.. _Tuskar REST API: https://review.openstack.org/#/c/94720/
+.. _Tuskar REST API: https://blueprints.launchpad.net/tuskar/+spec/tripleo-juno-tuskar-plan-rest-api
 
 In order to accomplish the goal of this specification, we need to first define
 storage domain models for roles, deployment plans, and associated concepts.
@@ -400,7 +400,7 @@ From a practical point of view, modeling relationships within Heat templates
 requires the in-place modification of Heat templates by Tuskar to deal with
 versioning.  For example, if version 1 of the compute role specifies
 {{compute.yaml: 1}, {compute-config.yaml: 1}}, and version 2 of the role
-specifies {{compute.yaml: 1}, {compute-config.yaml: 2}}, the only way to 
+specifies {{compute.yaml: 1}, {compute-config.yaml: 2}}, the only way to
 allow both versions of the role to be used is to allow programmatic
 modification of compute.yaml to point at the correct version of
 compute-config.yaml.
