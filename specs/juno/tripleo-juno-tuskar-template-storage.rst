@@ -334,10 +334,10 @@ The environment file requires secure storage to protect parameter values.
 
 **Storage Drivers**
 
-Storage drivers operate by storing object dictionaries.  For storage solutions such
-as Glance or Barbican, these dictionaries are stored as flat files.  For a storage
-solution such as a database, the dictionary is translated into a table row.  It is
-the responsibility of the driver to understand how it is storing the object
+Storage drivers operate by storing object dictionaries.  For storage solutions
+such as Glance these dictionaries are stored as flat files.  For a storage
+solution such as a database, the dictionary is translated into a table row.  It
+is the responsibility of the driver to understand how it is storing the object
 dictionaries.
 
 Each storage driver must provide the following methods.
@@ -363,9 +363,13 @@ Each storage driver must provide the following methods.
             # Return a list of all content.
 
 
-For Juno, we will aim to use a combination of a relational database and
-Barbican.  Barbican will be used for the secure storage of environment files.
-Database tables will be used for everything else.
+For Juno, we will aim to use a combination of a relational database and Heat.
+Heat will be used for the secure storage of sensitive environment parameters.
+Database tables will be used for everything else. The usage of Heat for secure
+stores relies on `PATCH support`_ to be added the Heat API. This bug is
+targeted for completion by Juno-2.
+
+.. _PATCH support: https://bugs.launchpad.net/heat/+bug/1224828
 
 This is merely a short-term solution, as it is understood that there is some
 reluctance in introducing an unneeded database dependency.  In the long-term we
@@ -385,7 +389,7 @@ Alternatives
 
 The specification proposes modeling relationships such as a plan's associated
 roles or a role's dependent templates as direct attributes of the object.
-However, this information wold appear to be available as part of a plan's
+However, this information would appear to be available as part of a plan's
 environment file or by traversing the role template's dependency graph.  Why
 not simply derive the relationships in that way?
 
@@ -408,7 +412,7 @@ compute-config.yaml.
 
 **Swift as a Storage Backend**
 
-Swift was considered as an option that would work with Barbican but was
+Swift was considered as an option to replace the relational database but was
 ultimately discounted for two key reasons:
 
 - The versioning system in Swift doesn't provide a static reference to the
@@ -435,10 +439,13 @@ for a development option which will be missing key features.
 
 **Secure Driver Alternatives**
 
-Currently the only alternative to Barbican is to implement our own cryptography
-with one of the other options listed above. This isn't a favourable choice as
-it adds a technical complexity and risk that should be beyond the scope of this
-proposal.
+Barbican, the OpenStack secure storage service, provides us with an alternative
+if PATCH support isn't added to Heat in time.
+
+Currently the only alternative other than Barbican is to implement our own
+cryptography with one of the other options listed above. This isn't a
+favourable choice as it adds a technical complexity and risk that should be
+beyond the scope of this proposal.
 
 The other option with regards to sensitive data is to not store any. This would
 require the REST API caller to provide the sensitive information each time a
@@ -449,7 +456,8 @@ Security Impact
 ---------------
 
 Some of the configuration values, such as service passwords, will be sensitive.
-For this reason, Barbican will be used to store all configuration values.
+For this reason, Heat or Barbican will be used to store all configuration
+values.
 
 While access will be controlled by the Tuskar API large files could be provided
 in the place of provider resource files or configuration files. These should be
@@ -476,7 +484,7 @@ deployment plan.
 Other Deployer Impact
 ---------------------
 
-TripleO will now require the use of a Barbican and a local database or Glance.
+None
 
 
 Developer Impact
@@ -535,6 +543,7 @@ References
 
 - https://blueprints.launchpad.net/glance/+spec/artifact-repository-api
 - https://blueprints.launchpad.net/glance/+spec/metadata-artifact-repository
+- https://bugs.launchpad.net/heat/+bug/1224828
 - https://docs.google.com/document/d/1tOTsIytVWtXGUaT2Ia4V5PWq4CiTfZPDn6rpRm5In7U
 - https://etherpad.openstack.org/p/juno-hot-artifacts-repository-finalize-design
 - https://etherpad.openstack.org/p/juno-summit-tripleo-tuskar-planning
