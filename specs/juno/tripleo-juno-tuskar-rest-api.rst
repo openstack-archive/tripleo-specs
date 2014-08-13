@@ -373,15 +373,14 @@ Notes:
 
 Request Data:
 
-JSON document containing the name and version of the role to add.
+JSON document containing the uuid of the role to add.
 
 Request Example:
 
 .. code-block:: json
 
  {
-   "name" : "compute",
-   "version" : "2"
+   "uuid" : "role_uuid"
  }
 
 Response Codes:
@@ -403,11 +402,11 @@ configuration parameters will be present in the result.
 
 **Removing a Role from a Plan**
 
-URL: ``/plans/<plan-uuid>/roles/<role-name>/<role-version>/``
+URL: ``/plans/<plan-uuid>/roles/<role-uuid>/``
 
 Method: ``DELETE``
 
-Description: Removes a role from the given plan.
+Description: Removes a role identified by role_uuid from the given plan.
 
 Notes:
 
