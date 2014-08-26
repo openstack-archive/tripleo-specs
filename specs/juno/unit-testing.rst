@@ -59,7 +59,7 @@ common errors in image elements.  More rules should be added to it as we
 find problems that can be automatically found.  It should also be applied
 to the tripleo-image-elements project.
 
-The bash8 project also provides some general style checks that would be
+The bashate project also provides some general style checks that would be
 useful in TripleO, so we should begin making use of it as well.  We should
 also contribute additional checks when possible and provide feedback on any
 checks we disagree with.
@@ -152,7 +152,7 @@ Work Items
 * Gate tripleo-image-elements on dib-lint, which will require fixing any
   lint failures currently in tripleo-image-elements.
 
-* Enable bash8 in the projects with a lot of bash scripts.
+* Enable bashate in the projects with a lot of bash scripts.
 
 * Add unit-testing to tripleo-incubator to enable verification of things
   like ``devtest.sh --build-only``.
@@ -162,7 +162,7 @@ Work Items
 Dependencies
 ============
 
-* bash8 will be a new test dependency.
+* bashate will be a new test dependency.
 
 Testing
 =======
@@ -181,7 +181,7 @@ documentation to help with writing unit tests.
 References
 ==========
 
-bash8: http://git.openstack.org/cgit/openstack-dev/bash8/
+bashate: http://git.openstack.org/cgit/openstack-dev/bashate/
 
 There are some notes related to this spec at the bottom of the Summit
 etherpad: https://etherpad.openstack.org/p/juno-summit-tripleo-ci
