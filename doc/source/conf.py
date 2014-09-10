@@ -31,6 +31,10 @@ extensions = [
 feed_base_url = 'http://specs.openstack.org/openstack/tripleo-specs'
 feed_author = 'OpenStack TripleO Team'
 
+exclude_patterns = [
+    '**/template.rst',
+]
+
 # autodoc generation is a bit aggressive and a nuisance when doing heavy
 # text edit cycles.
 # execute "export SPHINX_DEBUG=1" in your terminal to disable
