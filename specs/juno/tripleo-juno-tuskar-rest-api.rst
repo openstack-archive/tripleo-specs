@@ -454,12 +454,16 @@ Request Example:
 
 .. code-block:: json
 
- {
-   "parameters" : {
-     "database_host" : "10.11.12.13",
-     "database_password" : "secret"
+ [
+   {
+     "name" : "database_host",
+     "value" : "10.11.12.13"
+   },
+   {
+     "name" : "database_password",
+     "value" : "secret"
    }
- }
+ ]
 
 Response Codes:
 
