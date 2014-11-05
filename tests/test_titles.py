@@ -62,13 +62,20 @@ class TestTitles(testtools.TestCase):
     def _check_titles(self, titles):
         self.assertEqual(TITLES, titles)
 
-    def test_template(self):
-        files = ['specs/template.rst'] + glob.glob('specs/*/*')
+    def _run_template_tests(self, release_name):
+        files = ['specs/%s-template.rst' % release_name] + \
+                glob.glob('specs/%s/*' % release_name)
         for filename in files:
             self.assertTrue(filename.endswith(".rst"),
-                            "spec's file must uses 'rst' extension.")
+                            "specs file must uses 'rst' extension.")
             with open(filename) as f:
                 data = f.read()
             spec = docutils.core.publish_doctree(data)
             titles = self._get_titles(spec)
             self._check_titles(titles)
+
+    def test_juno_templates(self):
+        self._run_template_tests('juno')
+
+    def test_kilo_templates(self):
+        self._run_template_tests('kilo')

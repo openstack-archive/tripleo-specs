@@ -1,1 +1,1 @@
-../template.rst
+../juno-template.rst
