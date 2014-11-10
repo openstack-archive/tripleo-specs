@@ -32,6 +32,9 @@ additional settings.
 Proposed Change
 ===============
 
+Overview
+--------
+
 In the tripleo-image-elements, move the current ``neutron-network-node`` element
 to an element named ``neutron-router``, which will be responsible for doing the
 installation and configuration work required to install the ``neutron-l3-agent``

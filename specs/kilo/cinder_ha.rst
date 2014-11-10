@@ -27,6 +27,9 @@ fail, volumes hosted by that node would be lost forever.
 Proposed Change
 ===============
 
+Overview
+--------
+
 We aim at introducing support for the configuration of Cinder's Ceph backend
 driver and for the deployment of a Ceph storage for use with Cinder.
 

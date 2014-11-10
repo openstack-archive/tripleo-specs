@@ -42,6 +42,10 @@ is in favor of it.
 
 Proposed Change
 ===============
+
+Overview
+--------
+
 When appropriate, allow a core reviewer to approve a change even if the
 latest patch set does not have 2 +2's.  Specifically, this should be used
 under the following circumstances:
