@@ -4,14 +4,21 @@
 Tripleo Project Specifications
 ==============================
 
-Juno approved specs:
+Kilo Approved Specs:
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   specs/kilo/*
+
+Juno Approved Specs:
 
 .. toctree::
    :glob:
    :maxdepth: 1
 
    specs/juno/*
-   specs/kilo/*
 
 ==================
 Indices and tables
