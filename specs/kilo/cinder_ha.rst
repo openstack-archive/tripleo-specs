@@ -122,7 +122,7 @@ Other Deployer Impact
   data over the network. Ceph allows for the OSD service to differentiate
   between a public network and a cluster network for this purpose. This spec
   is not going to introduce support for usage of a dedicated cluster network
-  but we we want to have a follow-up spec to implement support for that later.
+  but we want to have a follow-up spec to implement support for that later.
 
 Developer Impact
 ----------------
