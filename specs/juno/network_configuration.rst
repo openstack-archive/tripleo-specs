@@ -261,7 +261,7 @@ Documentation Impact
 
 The recommended heat metadata used for network configuration may
 change as result of this feature. Older formats will be preserved for
-backwards compatability.
+backwards compatibility.
 
 References
 ==========
