@@ -12,6 +12,14 @@ Mitaka Approved Specs:
 
    specs/mitaka/*
 
+Liberty Approved Specs:
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   specs/liberty/*
+
 Kilo Approved Specs:
 
 .. toctree::
