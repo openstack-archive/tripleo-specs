@@ -86,13 +86,13 @@ class TestTitles(testtools.TestCase):
 
 
     def test_template(self):
+        with open("specs/template.rst") as f:
+            template = f.read()
+        spec = docutils.core.publish_doctree(template)
+        template_titles = self._get_titles(spec)
+
         releases = [x.split('/')[1] for x in glob.glob('specs/*/')]
         for release in releases:
-            with open("specs/%s-template.rst" % release) as f:
-                template = f.read()
-            spec = docutils.core.publish_doctree(template)
-            template_titles = self._get_titles(spec)
-
             files = glob.glob("specs/%s/*/*" % release)
             for filename in files:
                 self.assertTrue(filename.endswith(".rst"),
