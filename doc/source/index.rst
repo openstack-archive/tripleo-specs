@@ -4,6 +4,14 @@
 Tripleo Project Specifications
 ==============================
 
+Mitaka Approved Specs:
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   specs/mitaka/*
+
 Kilo Approved Specs:
 
 .. toctree::
