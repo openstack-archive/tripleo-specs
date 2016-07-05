@@ -4,6 +4,14 @@
 Tripleo Project Specifications
 ==============================
 
+Newton Approved Specs:
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   specs/newton/*
+
 Mitaka Approved Specs:
 
 .. toctree::
