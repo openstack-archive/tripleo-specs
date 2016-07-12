@@ -23,6 +23,9 @@ reviewed anyway.
 Policy
 ======
 
+Single +2 Approvals
+-------------------
+
 A core can and should approve patches without a second +2 under the following
 circumstances:
 
@@ -36,8 +39,20 @@ circumstances:
   can be merged with a single +2 review.
 * Requirements updates proposed by the bot.
 
-Note that this policy does not affect CI requirements.  Patches must still
-pass CI before merging.
+Co-author +2
+------------
+
+Co-authors on a patch are allowed to +2 that patch, but at least one +2 from a
+core not listed as a co-author is required to merge the patch.  For example, if
+core A pushes a patch with cores B and C as a co-authors, core B and core C are
+both allowed to +2 that patch, but another core is required to +2 before the
+patch can be merged.
+
+Note on CI
+----------
+
+This policy does not affect CI requirements.  Patches must still pass CI before
+merging.
 
 Alternatives & History
 ======================
@@ -85,6 +100,8 @@ Revision History
      - Description
    * - Newton
      - Introduced
+   * - Newton
+     - Added co-author +2 policy
 
 .. note::
 
