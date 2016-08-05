@@ -48,6 +48,13 @@ core A pushes a patch with cores B and C as a co-authors, core B and core C are
 both allowed to +2 that patch, but another core is required to +2 before the
 patch can be merged.
 
+Self-Approval
+-------------
+
+It is acceptable for a core to self-approve a patch they submitted if it has the
+requisite 2 +2's and a CI pass.  However, this should not be done if there is any
+dispute about the patch, such as on a change with 2 +2's and an unresolved -1.
+
 Note on CI
 ----------
 
