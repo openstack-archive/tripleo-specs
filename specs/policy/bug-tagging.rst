@@ -37,6 +37,8 @@ Tags
 +-------------------------------+----------------------------------------------------------------------------+
 | ci                            | A bug affecting the Continuous Integration system                          |
 +-------------------------------+----------------------------------------------------------------------------+
+| config-agent                  | A bug affecting os-collect-config, os-refresh-config, os-apply-config      |
++-------------------------------+----------------------------------------------------------------------------+
 | low-hanging-fruit             | A good starter bug for newcomers                                           |
 +-------------------------------+----------------------------------------------------------------------------+
 | tripleo-heat-templates        | A bug affecting the TripleO Heat Templates                                 |
