@@ -126,7 +126,7 @@ Performance Impact
 Developers and Operators would likely be able to deploy puppet module changes
 more quickly (without having to create a distro package). The actual deployment
 of puppet modules via swift (downloading and extracting the tarball) would
-likely be just as fast as as a tarball.
+likely be just as fast as a tarball.
 
 Other Deployer Impact
 ---------------------
