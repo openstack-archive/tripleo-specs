@@ -3,6 +3,14 @@
 ==============================
 Tripleo Project Specifications
 ==============================
+Pike Proposed Specs:
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   specs/pike/*
+
 Ocata Approved Specs:
 
 .. toctree::
