@@ -95,9 +95,9 @@ following:
     certificates from FreeIPA.
 
     However, even if this micro-service is not in place, we could pass the OTP
-    via the TripleO Heat Templates (in the overcloud deployment). So it is a
-    possiblity to have the controllers fetch their keytab and subsequently
-    requrest their certificates even if we don't have auto-enrollment in place.
+    via the TripleO Heat Templates (in the overcloud deployment). So it is
+    possible to have the controllers fetching their keytab and subsequently
+    request their certificates even if we don't have auto-enrollment in place.
 
 .. note::
 
