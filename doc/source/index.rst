@@ -19,14 +19,6 @@ Newton Approved Specs:
 
    specs/newton/*
 
-Newton Approved Specs:
-
-.. toctree::
-   :glob:
-   :maxdepth: 1
-
-   specs/newton/*
-
 Mitaka Approved Specs:
 
 .. toctree::
