@@ -3,6 +3,14 @@
 ==============================
 Tripleo Project Specifications
 ==============================
+Ocata Approved Specs:
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   specs/ocata/*
+
 Newton Approved Specs:
 
 .. toctree::
