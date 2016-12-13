@@ -2,6 +2,9 @@
  Spec Review Process
 =========================
 
+Document the existing process to help reviewers, especially newcomers,
+understand how to review specs. This is migrating the existing wiki
+documentation into a policy.
 
 Problem Description
 ===================
@@ -64,8 +67,8 @@ reviewing and approving specs.
     technical details that not everyone will grasp, the overall
     proposed change should be able to be understood by folks generally
     familiar with TripleO. Someone who is generally familiar with
-    TripleO is likely someone who has run through devtest, perhaps
-    contributed some code, or participated in reviews.
+    TripleO is likely someone who has run through the undercloud
+    install, perhaps contributed some code, or participated in reviews.
   * To aid in comprehension, grammar nits should generally be corrected
     when they have been pointed out. Be aware though that even nits can
     cause disagreements, as folks pointing out nits may be wrong
@@ -93,6 +96,11 @@ reviewing and approving specs.
   * A +1 on a spec from a core reviewer indicates that the core
     reviewer is not necessarily committing to review that spec's
     patches.
+  * It's fine to +2 even if the spec also relates to other repositories
+    and areas of expertise, in addition to the reviewer's own. We
+    probably would not want to merge any spec that spanned multiple
+    specialties without a representative from each group adding their
+    +2.
   * Have any additional (perhaps non-core) reviewers volunteered to
     review patches that implement the spec?
   * There should be a sufficient number of core reviewers who have
@@ -119,7 +127,7 @@ Primary author:
   james-slagle (from the wiki history)
 
 Other contributors:
-  None
+  jpichon
 
 Milestones
 ----------
