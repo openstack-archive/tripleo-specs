@@ -38,6 +38,9 @@ circumstances:
   that the backport is good (one by proposing, the other by reviewing), they
   can be merged with a single +2 review.
 * Requirements updates proposed by the bot.
+* Translation updates proposed by the bot. (See also `reviewing
+  translation imports
+  <http://docs.openstack.org/developer/i18n/reviewing-translation-import.html>`_.)
 
 Co-author +2
 ------------
@@ -109,6 +112,8 @@ Revision History
      - Introduced
    * - Newton
      - Added co-author +2 policy
+   * - Ocata
+     - Added note on translation imports
 
 .. note::
 
