@@ -39,6 +39,8 @@ Tags
 +-------------------------------+----------------------------------------------------------------------------+
 | config-agent                  | A bug affecting os-collect-config, os-refresh-config, os-apply-config      |
 +-------------------------------+----------------------------------------------------------------------------+
+| containers                    | A bug affecting container based deployments                                |
++-------------------------------+----------------------------------------------------------------------------+
 | documentation                 | A bug that is specific to documentation issues                             |
 +-------------------------------+----------------------------------------------------------------------------+
 | i18n                          | A bug related to internationalization issues                               |
