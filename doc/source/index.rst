@@ -59,6 +59,14 @@ Juno Approved Specs:
 
    specs/juno/*
 
+Pike Approved Specs:
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   specs/pike/*
+
 ========================
 TripleO Project Policies
 ========================
