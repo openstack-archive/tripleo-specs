@@ -3,7 +3,7 @@
 ==============================
 Tripleo Project Specifications
 ==============================
-Pike Proposed Specs:
+Pike Approved Specs:
 
 .. toctree::
    :glob:
@@ -58,14 +58,6 @@ Juno Approved Specs:
    :maxdepth: 1
 
    specs/juno/*
-
-Pike Approved Specs:
-
-.. toctree::
-   :glob:
-   :maxdepth: 1
-
-   specs/pike/*
 
 ========================
 TripleO Project Policies
