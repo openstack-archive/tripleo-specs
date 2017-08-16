@@ -59,6 +59,8 @@ Tags
 +-------------------------------+----------------------------------------------------------------------------+
 | selinux                       | A bug related to SELinux                                                   |
 +-------------------------------+----------------------------------------------------------------------------+
+| tech-debt                     | A bug related to TripleO tech debt                                         |
++-------------------------------+----------------------------------------------------------------------------+
 | tripleo-common                | A bug affecting tripleo-common                                             |
 +-------------------------------+----------------------------------------------------------------------------+
 | tripleo-heat-templates        | A bug affecting the TripleO Heat Templates                                 |
@@ -128,6 +130,8 @@ Revision History
      - Description
    * - Newton
      - Introduced
+   * - Queens
+     - tech-debt tag added
 
 .. note::
 
