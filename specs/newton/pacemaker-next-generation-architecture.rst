@@ -21,7 +21,7 @@ The pacemaker architecture deployed currently via
 `puppet/manifests/overcloud_controller_pacemaker.pp` manages most
 service on the controllers via pacemaker. This approach, while having the
 advantage of having a single entity managing and monitoring all services, does
-bring a certain complexity to it and assumes that the operaters are quite
+bring a certain complexity to it and assumes that the operators are quite
 familiar with pacemaker and its management of resources. The aim is to
 propose a new architecture, replacing the existing one, where pacemaker
 controls the following resources:
@@ -130,7 +130,7 @@ The operators working with a cloud are impacted in the following ways:
     https://github.com/ClusterLabs/pacemaker/blob/master/lib/services/systemd.c#L547
 
   With the new architecture, restarting a native openstack service across
-  all controllers will require restaring it via `systemctl` on each node (as opposed
+  all controllers will require restarting it via `systemctl` on each node (as opposed
   to a single `pcs` command as it is done today)
 
 * All services will be configured to retry indefinitely to connect to
@@ -177,7 +177,7 @@ Work Items
 
 * Prepare the roles that deploy the next generation architecture.  Initially,
   keep it as close as possible to the existing HA template and make it simpler
-  in a second iteration (remove unnecesary steps, etc.) Template currently
+  in a second iteration (remove unnecessary steps, etc.) Template currently
   lives here and deploys successfully:
 
     https://review.openstack.org/#/c/314208/

@@ -23,7 +23,7 @@ are not being verified whether is failing or passing.
 Even if there is someone responsible to verify these runs, still is a manual
 job go to logs web site, check what's the latest job, go to the logs, verify
 if tempest ran, list the number of failures, check against a list if these
-failures are known failures or new ones, and only afther all these steps,
+failures are known failures or new ones, and only after all these steps,
 start to work to identify the root cause of the problem.
 
 Proposed Change

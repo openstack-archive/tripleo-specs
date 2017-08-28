@@ -37,7 +37,7 @@ If the size exceeds a predetermined size (e.g. 10MB), Mistral will rename it to
 ``tripleo-ui-log-<timestamp>``, and create a new file in its place.  The file
 will then receive the messages from Zaqar, one per line.  Once we reach, let's
 say, a hundred archives (about 1GB) we can start removing dropping data in order
-to prevent unnecessary data accoumulation.
+to prevent unnecessary data accumulation.
 
 To view the logging data, we can ask Swift for 10 latest messages with a prefix
 of ``tripleo-ui-log``.  These files can be presented in the GUI for download.
