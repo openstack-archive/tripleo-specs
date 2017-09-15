@@ -3,6 +3,15 @@
 ==============================
 Tripleo Project Specifications
 ==============================
+
+Queens Approved Specs:
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   specs/queens/*
+
 Pike Approved Specs:
 
 .. toctree::
