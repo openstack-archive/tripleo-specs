@@ -59,7 +59,7 @@ compute nodes using TripleO.
   * real-time KVM
   * real-time tuned profiles
 
-* a new real-time compute role that is a variant of the exising compute role
+* a new real-time compute role that is a variant of the existing compute role
 
   * huge pages shall be enabled on the real-time compute nodes.
   * huge pages shall be reserved for the real-time guests.

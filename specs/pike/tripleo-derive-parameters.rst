@@ -72,7 +72,7 @@ with node introspection for this workflow to be successful.
 During the first iterations, all the roles in a deployment will be
 analyzed to find a service associated with the role, which requires
 parameter derivation. Various options of using this and the final
-choice for the current iteration is discsused in below section
+choice for the current iteration is discussed in below section
 `Workflow Association with Services`_.
 
 This workflow assumes that all the nodes in a role have a homegenous
@@ -80,7 +80,7 @@ hardware specification and introspection data of the first node will
 be used for processing the parameters for the entire role. This will
 be reexamined in later iterations, based on the need for node specific
 derivations. The workflow will consider the flavor-profile association
-and nova placement scheduler to indentify the nodes associated with a
+and nova placement scheduler to identify the nodes associated with a
 role.
 
 Role-specific parameters are an important requirement for this workflow.
@@ -121,7 +121,7 @@ take advantage of this optional feature by enabling it via ``plan-
 environment.yaml``. A new section ``workflow_parameters`` will be added to
 the ``plan-environments.yaml`` file to accomodate the additional parameters
 required for executing workflows. With this additional section, we can ensure
-that the workflow sepcific parameters are provide only to the workflow,
+that the workflow specific parameters are provide only to the workflow,
 without polluting the heat environments. It will also be possible to provide
 multiple plan environment files which will be merged in the CLI before plan
 creation.
@@ -154,7 +154,7 @@ Usecase 2: Derivation Profiles for HCI
 This usecase uses HCI, running Ceph OSD and Nova Compute on the same node. HCI
 derive parameters workflow works with a default set of configs to categorize
 the type of the workload that the role will host. An option will be provide to
-override the default configs with deployment specfic configs via ``plan-
+override the default configs with deployment specific configs via ``plan-
 environment.yaml``.
 
 In case of HCI deployment, the additional plan environment used for the
@@ -230,7 +230,7 @@ service.
 Workflow Association with Services
 ----------------------------------
 
-The optimal way to assosciate the derived parameter workflows with
+The optimal way to associate the derived parameter workflows with
 services, is to get the list of the enabled services on a given role,
 by previewing Heat stack. With the current limitations in Heat, it is
 not possible fetch the enabled services list on a role. Thus, a new
@@ -308,7 +308,7 @@ Other End User Impact
 ---------------------
 
 Operators need not manually derive the deployment parameters based on the
-introspection or hardware specficiation data, as it is automatically derived
+introspection or hardware specification data, as it is automatically derived
 with pre-defined formulas.
 
 Performance Impact
@@ -369,7 +369,7 @@ Work Items
 * Derive Params start workflow to find list of roles
 * Workflow run for each role to fetch the introspection data and trigger
   individual features workflow
-* Workflow to indentify if a service associated with a features workflow is
+* Workflow to identify if a service associated with a features workflow is
   enabled in a role
 * DPDK Workflow: Analysis and concluding the format of the input data (jpalanis)
 * DPDK Workflow: Parameter deriving workflow (jpalanis)

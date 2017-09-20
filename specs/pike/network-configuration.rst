@@ -109,7 +109,7 @@ Documentation Impact
 ====================
 
 We should document the new settings introduced by the wizard.  The documentation
-should be transferrable between the heat template project, and TripleO UI.
+should be transferable between the heat template project, and TripleO UI.
 
 References
 ==========

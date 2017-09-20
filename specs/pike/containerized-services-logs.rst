@@ -41,7 +41,7 @@ Overview
 
 The scope of this document for Pike is limited to recommendations for
 developers of containerized services, bearing in mind use cases for hybrid
-environments. It addresses only intermediate implementaion steps for Pike and
+environments. It addresses only intermediate implementation steps for Pike and
 smooth UX with upgrades from Ocata to Pike, and with future upgrades from Pike
 as well.
 
@@ -61,7 +61,7 @@ The scope for future releases, starting from Queens, shall include best
 practices for collecting (shipping), storing (persisting), processing (parsing)
 and accessing (filtering) logs of hybrid TripleO deployments with advanced
 techniques like EFK (Elasticsearch, Fluentd, Kibana) or the like. Hereafter
-those are refered as "future steps".
+those are referred as "future steps".
 
 Note, this is limited to OpenStack and Linux HA stack (Pacemaker and Corosync).
 We can do nothing to the rest of the supporting and legacy apps like
@@ -275,7 +275,7 @@ Queens parts:
 * Verify if the namespaced `/var/log/` for containers works and fits the case
   (no assignee).
 * Address the current state of OpenStack infrastructure apps as they are, and
-  gently move them towards these guidelines refered as "future steps" (no
+  gently move them towards these guidelines referred as "future steps" (no
   assignee).
 
 Dependencies

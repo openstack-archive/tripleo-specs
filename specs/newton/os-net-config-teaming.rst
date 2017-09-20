@@ -38,7 +38,7 @@ Alternatives
 
 We already have two bonding methods in use, the Linux bonding kernel module,
 and Open vSwitch. However, adapter teaming is becoming a best practice, and
-this change will open up that possiblity.
+this change will open up that possibility.
 
 Security Impact
 ---------------
@@ -181,8 +181,8 @@ configuration.
 Documentation Impact
 ====================
 
-The deployment documentaiton will need to be updated to cover the use of
-teaming. The os-net-config sample configurations will demostrate the use
+The deployment documentation will need to be updated to cover the use of
+teaming. The os-net-config sample configurations will demonstrate the use
 in os-net-config. TripleO Heat template examples should also help with
 deployments using teaming.
 
