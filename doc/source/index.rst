@@ -4,6 +4,14 @@
 Tripleo Project Specifications
 ==============================
 
+Rocky Approved Specs:
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   specs/rocky/*
+
 Queens Approved Specs:
 
 .. toctree::
