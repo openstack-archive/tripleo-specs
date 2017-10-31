@@ -185,6 +185,6 @@ Check the source_ for links
 .. _client: https://github.com/openstack/python-tripleoclient/blob/4d342826d6c3db38ee88dccc92363b655b1161a5/tripleoclient/v1/overcloud_config.py#L63
 .. _loop: https://github.com/openstack/tripleo-heat-templates/blob/fe2acfc579295965b5f39c5ef7a34bea35f3d6bf/common/deploy-steps.j2#L364-L365
 .. _disabled: https://review.openstack.org/#/c/487496/21/tripleo_common/actions/package_update.py@63
-.. _source: https://raw.githubusercontent.com/openstack/github.com/openstack/tripleo-specs/tree/master/specs/queens/tripleo_ansible_upgrades_workflow.rst
+.. _source: https://raw.githubusercontent.com/openstack/tripleo-specs/master/specs/queens/tripleo_ansible_upgrades_workflow.rst
 .. _463728: https://review.openstack.org/#/c/463728/
 .. _463765: https://review.openstack.org/#/c/463765/
