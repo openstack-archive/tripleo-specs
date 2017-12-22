@@ -1,4 +1,4 @@
-..
+.
  This work is licensed under a Creative Commons Attribution 3.0 Unported
  License.
 
@@ -13,7 +13,7 @@ https://blueprints.launchpad.net/tripleo/+spec/fast-forward-upgrades
 Fast-forward upgrades are upgrades that move an environment from release `N` to
 `N+X` in a single step, where `X` is greater than `1` and for fast-forward
 upgrades is typically `3`. This spec outlines how such upgrades can be
-orchestrated by TripleO between the Newton and Queens releases.
+orchestrated by TripleO between the Newton and Queens OpenStack releases.
 
 Problem Description
 ===================
@@ -59,7 +59,8 @@ This will give the impression of the Ocata and Pike releases being skipped with
 the fast-forward upgrade moving the environment from Newton to Queens. In
 reality as OpenStack projects with the `supports-upgrade` tag are only required
 to support `N` to `N+1` upgrades [3]_ the upgrade will still need to move
-through each release, completing database migrations and limited other tasks.
+through each release, completing database migrations and a limited set of other
+tasks.
 
 Caveats
 -------
@@ -92,13 +93,13 @@ should remove the need for additional reboots during the upgrade.
 The undercloud also needs to be upgraded to `N+3` ahead of any overcloud
 upgrade. Again this can happen well in advance of the overcloud upgrade. For
 the time being this is a traditional, linear upgrade between `N` and `N+1`
-until we reach the target `N+3` Queens release.
+releases until we reach the target `N+3` Queens release.
 
-* Container images uploaded prior to the start of the upgrade
+* Container images cached prior to the start of the upgrade
 
 With the introduction of containerised TripleO overclouds in Pike operators
-will need to upload the required container images prior to the fast-forward
-upgrade if they wish to end up with a constainerised Queens overcloud.
+will need to cache the required container images prior to the fast-forward
+upgrade if they wish to end up with a containerised Queens overcloud.
 
 High level flow
 ---------------
@@ -106,10 +107,12 @@ High level flow
 At a high level the following actions will be carried out by the fast-forward
 upgrade to move the overcloud from `N` to `N+3`:
 
-* Stop all control and compute services across all roles
+* Stop all OpenStack control and compute services across all roles
 
-This should bring down the control plane but allow any workloads to continue
-running without interruption.
+This will bring down the OpenStack control plane, leaving infrastructure
+services such as the databases running, while allowing any workloads to
+continue running without interruption. For HA environments this will disable
+the cluster, ensuring that OpenStack services are not restarted.
 
 * Upgrade a single host from `N` to `N+1` then `N+1` to `N+2`
 
@@ -117,36 +120,65 @@ As alluded to earlier, OpenStack projects currently only support `N` to `N+1`
 upgrades and so fast-forward upgrades still need to cycle through each release in
 order to complete data migrations and any other tasks that are required before
 these migrations can be completed. This part of the upgrade is limited to a
-single host to ensure this is completed as quickly as possible.
+single host per role to ensure this is completed as quickly as possible.
 
-By default a single node of role `controller` will be selected for this part of
-the upgrade however this should be fully configurable by the operator driving
-the upgrade.
+* Optional upgrade and deployment of single canary compute host to `N+3`
+
+As fast-forward upgrades aim to ensure workloads are online and accessible
+during the upgrade we can optionally upgrade all control service hosting roles
+_and_ a single canary compute to `N+3` to verify that workloads will remain
+active and accessible during the upgrade.
+
+A canary compute node will be selected at the start of the upgrade and have
+instances launched on it to validate that both it and the data plane remain
+active during the upgrade. The upgrade will halt if either become inaccessible
+with a recovery procedure being provided to move all hosts back to `N+1`
+without further disruption to the active workloads on the untouched compute
+hosts.
 
 * Upgrade and deployment of all roles to `N+3`
 
-The final action in the fast-forward upgrade will be a traditional `N` to `N+1`
-migration between `N+2` and `N+3` followed by the deployment of all roles on
-`N+3`. The final deployment ensuring the overcloud is containerised.
+If the above optional canary compute host upgrade is not used then the final
+action in the fast-forward upgrade will be a traditional `N` to `N+1` migration
+between `N+2` and `N+3` followed by the deployment of all roles on `N+3`. This
+final action essentially being a redeployment of the overcloud to containers on
+`N+3` (Queens) as previously seen when upgrading TripleO environments from
+Ocata to Pike.
+
+A python-tripleoclient command and associated Mistral workflow will control if
+this final step is applied to all roles in parallel (default), all hosts in a
+given role or selected hosts in a given role. The latter being useful if a user
+wants to control the order in which computes are moved from `N+1` to `N+3` etc.
 
 Implementation
 --------------
 
 As with updates [5]_ and upgrades [6]_ specific fast-forward upgrade Ansible
 tasks associated with the first two actions above will be introduced into the
-`tripleo-heat-template` service templates for each service as `role_data`
-outputs under `fast_forward_upgrade_tasks`.
+`tripleo-heat-template` service templates for each service as `RoleConfig`
+outputs.
 
-As with `upgrade_tasks` these tasks will be broken into various steps:
+As with `upgrade_tasks` each task is associated with a particular step in the
+process. For `fast_forward_upgrade_tasks` these steps are split between prep
+tasks that apply to all hosts and bootstrap tasks that only apply to a single
+host for a given role.
 
-1) Stop all control-plane services
-2) Quiesce the control-plane
-3) Perform a package update and install new packages
-4) Add and potentially start services needed for migration tasks
-5) Perform any migration tasks, e.g DB sync commands
-6) Optionally validate and cleanup after migration tasks complete
+Prep step tasks will map to the following actions:
 
-As with `update_tasks` each task will use a simple `when` conditional to
+- Step=1: Disable the overall cluster
+- Step=2: Stop OpenStack services
+- Step=3: Update host repositories
+
+Bootstrap step tasks will map to the following actions:
+
+- Step=4: Take OpenStack DB backups
+- Step=5: Pre package update commands
+- Step=6: Update required packages
+- Step=7: Post package update commands
+- Step=8: OpenStack service DB sync
+- Step=9: Validation
+
+As with `update_tasks` each task will use simple `when` conditionals to
 identify which step and release(s) it is associated with, ensuring these tasks
 are executed at the correct point in the upgrade.
 
@@ -158,15 +190,13 @@ For example, a step 2 `fast_forward_upgrade_task` task on Ocata is listed below:
      - name: Example Ocata step 2 task
        command: /bin/foo bar
        when:
-         - step == 2
+         - step|int == 2
          - release == 'ocata'
 
 
 These tasks will then be collated into role specific Ansible playbooks via the
 RoleConfig output of the `overcloud` heat template, with step and release
-variables being fed in to ensure tasks are executed in the correct order. These
-playbooks should also include the required `upgrade_tasks` and `deploy_tasks`
-as highlighted above to ensure baremetal overclouds are migrated to containers.
+variables being fed in to ensure tasks are executed in the correct order.
 
 As with `major upgrades` [8] a new mistral workflow and tripleoclient command
 will be introduced to generate and execute the associated Ansible tasks.
@@ -186,30 +216,29 @@ with the following commands:
     openstack overcloud deploy --templates [..path to latest THT..] \
                                [..original environment arguments..] \
                                [..new container environment agruments..] \
-                               --setup-heat-outputs
-    openstack overcloud config download --config-dir ~/overcloud-config
+                               -e environments/fast-forward-upgrade.yaml \
+                               -e environments/noop-deploy-steps.yaml
+    openstack overcloud config download
 
 
 Dev workflow
 ------------
 
-A new tripleo-quickstart-extras `libvirt/snapshot` Ansible role will be
-introduced to snapshot the initial undercloud and overcloud domains when these
-are deployed using libvirt.
+The existing tripleo-upgrade Ansible role will be used to automate the
+fast-forward upgrade process for use by developers and CI, including the
+initial overcloud minor update, undercloud upgrade to `N+3` and fast-forward
+upgrade itself.
 
-A new tripleo-fast-forward-upgrade Ansible role will be introduced to automate
-the fast-forward upgrade process, including the initial overcloud minor update,
-undercloud upgrade to `N+3` and fast-forward upgrade itself. Again, snapshots
-of the undercloud and overcloud domains will be taken between each step when
-these are deployed using libvirt to hopefully make development less painful.
+Developers working on fast_forward_upgrade_tasks will also be able to deploy
+minimal overcloud deployments via `tripleo-quickstart` using release configs
+also used by CI.
 
-Developers working on fast_forward_upgrade_tasks will be able to utilise the
-above roles to snapshot their environments ahead of testing new or modified
-tasks. Further as these tasks can be rendered as Ansible playbooks developers
-can also run a subset of these tasks against specific nodes using custom
-playbooks during their development work. Examples of how to do this will be
-documented hopefully ensuring a smooth development experience for anyone
-looking to contribute tasks for specific services.
+Further, when developing tasks, developers will be able to manually render and
+run `fast_forward_upgrade_tasks` as standalone Ansible playbooks. Allowing them
+to run a subset of the tasks against specific nodes using
+`tripleo-ansible-inventory`. Examples of how to do this will be documented
+hopefully ensuring a smooth development experience for anyone looking to
+contribute tasks for specific services.
 
 Alternatives
 ------------
@@ -251,23 +280,35 @@ Assignee(s)
 -----------
 
 Primary assignees:
-* lyarwood
+
 * lbezdick
+* marios
+* chem
 
 Other contributors:
-* shardy
 
+* shardy
+* lyarwood
 
 Work Items
 ----------
 
 * Introduce fast_forward_upgrades_playbook.yaml to RoleConfig
 * Introduce fast_forward_upgrade_tasks in each service template
+* Introduce a python-tripleoclient command and associated Mistral workflow.
 
 Dependencies
 ============
 
-N/A
+* TripleO - Ansible upgrade Workflow with UI integration [9]_
+
+The new major upgrade workflow being introduced for Pike to Queens upgrades
+will obviously impact what fast-forward upgrades looks like to Queens. At
+present the high level flow for fast-forward upgrades assumes that we can reuse
+the current `upgrade_tasks` between N+2 and N+3 to disable and then potentially
+remove baremetal services. This is likely to change as the major upgrade
+workflow is introduced and so it is likely that these steps will need to be
+encoded in `fast_forward_upgrade_tasks`.
 
 Testing
 =======
@@ -275,11 +316,20 @@ Testing
 * Third party CI jobs will need to be created to test Newton to Queens using
   RDO given the upstream EOL of stable/newton with the release of Pike.
 
+* These jobs should cover the initial undercloud upgrade, overcloud upgrade and
+  optional canary compute node checks.
+
 * An additional third party CI job will be required to verify that a Queens
   undercloud can correctly manage a Newton overcloud, allowing the separation
   of the undercloud upgrade and fast-forward upgrade discussed under
   prerequisites.
 
+* Finally, minimal overcloud roles should be used to verify the upgrade for
+  certain services. For example, when changes are made to the
+  `fast_forward_upgrade_tasks` of Nova via changes to
+  `docker/services/nova-*.yaml` files then a basic overcloud deployment of
+  Keystone, Glance, Swift, Cinder, Neutron and Nova could be used to quickly
+  verify the changes in regards to fast-forward upgrades.
 
 Documentation Impact
 ====================
@@ -298,3 +348,4 @@ References
 .. [6] https://github.com/openstack/tripleo-heat-templates/blob/master/puppet/services/README.rst#upgrade-steps
 .. [7] https://review.openstack.org/#/c/495658/
 .. [8] https://review.openstack.org/#/q/topic:major-upgrade+(status:open+OR+status:merged)
+.. [9] https://specs.openstack.org/openstack/tripleo-specs/specs/queens/tripleo_ansible_upgrades_workflow.html
