@@ -1,4 +1,4 @@
-CI Team Structure
+#CI Team Structure
 =================
 
 Problem Description
@@ -106,8 +106,8 @@ added to the technical debt column of Trello.
 **Note:** Each sprint needs a clear definition of done that is documented in
 the epic used for the sprint.
 
-Sprint Start ( Day 1 ) - 4 hours
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Sprint Start ( Day 1 ) - Maximum time of 2.5 hours
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
   * Sprints are two weeks in length
   * A planning meeting is attended by the entire team including the Ruck and
@@ -115,11 +115,10 @@ Sprint Start ( Day 1 ) - 4 hours
   * Review PTO
   * Assign Ruck and Rover positions
   * Review any meetings that need to be covered by the Ruck/Rover
-  * Trello Board triage
-  * Bug triage
   * The UA will present options for the sprint epic
   * Discuss the epic, lightly breaking each one down (30 minutes)
   * Vote on an epic
+  * The vote can be done using a doodle form
   * Break down the sprint epic into cards
   * Review each card
       * Each card must have a clear definition of done
@@ -127,9 +126,9 @@ Sprint Start ( Day 1 ) - 4 hours
         information for an engineer with little to no background with the task.
 
 
-Sprint End ( Day 10 ) - 4 hours
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  * Retrospective ( 30 min )
+Sprint End ( Day 10 ) - Maximum time of 2.5 hours
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  * Retrospective ( 30 min, can be extended to 1 hour )
       * team members, ruck and rover only
   * Document any technical debt left over from the sprint
   * Gerrit Review meeting ( 30 min )
@@ -140,13 +139,15 @@ Sprint End ( Day 10 ) - 4 hours
 
 Scrum meetings
 ^^^^^^^^^^^^^^
-  * Planning meeting, video conference ( 4 hours )
-  * Spring End, video and irc #oooq on freenode ( 4 hours )
   * 2 live video conference meetings per week
      * sprint stand up ( 30 min )
-  * Other days, post status to etherpad
-     * https://etherpad.openstack.org/p/tripleo-ci-squad-scrum
 
+Bug triage - Maximum time of 1 hour
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ * Every two weeks
+ * Team Catalist, User Advocate, Ruck and Rover must attend. The other team
+   members are optional
+ * Review all the bugs related to Quickstart or CI opened and take action
 
 Alternatives & History
 ----------------------
