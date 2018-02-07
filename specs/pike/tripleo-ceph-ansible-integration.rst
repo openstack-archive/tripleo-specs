@@ -190,7 +190,7 @@ to be triggered during initial deployment with TripleO follows:
    with Heat accordingly.
 #. A point in the deployment is reached where the Overcloud nodes are
    imaged, booted, and networked. At that point the undercloud has
-   access to the the provisioning or management IPs of the Overcloud
+   access to the provisioning or management IPs of the Overcloud
    nodes.
 #. A new Heat Resource is created which starts a Mistral workflow to
    Deploy Ceph on the systems with the any of the five Ceph server
@@ -282,7 +282,7 @@ to be triggered during initial deployment with TripleO follows:
    created. For example, because the workflow is idempotent, if the
    resource creation fails because the wrong parameter was passed or
    becasue of a temporary network issue, the deployer could simply run
-   a stack-update the the Mistral worklow would run again and if the
+   a stack-update the Mistral worklow would run again and if the
    issues which caused the first run to fail were resolved, the
    deployment should succeed. Similarly if a user updates a parameter,
    e.g. a new disk is added to `ceph::profile::params::osds`, then the
@@ -313,7 +313,7 @@ process to deploy the OSDs along with the Overcloud:
    with Heat accordingly.
 #. A point in the deployment is reached where the new Overcloud nodes
    are imaged, booted, and networked. At that point the undercloud has
-   access to the the provisioning or management IPs of the Overcloud
+   access to the provisioning or management IPs of the Overcloud
    nodes.
 #. A new Heat Resource is created which starts a Mistral workflow to
    add new Ceph OSDs.
