@@ -71,9 +71,7 @@ Squads
 ------
 
 The list tends to be dynamic over the cycles, depending on which topics
-the team is working on.
-
-Here's a proposal for Ocata:
+the team is working on. The list below is subject to change as squads change.
 
 +-------------------------------+----------------------------------------------------------------------------+
 | Squad                         | Description                                                                |
@@ -93,6 +91,8 @@ Here's a proposal for Ocata:
 | networking                    | Group of people focusing on networking bits in TripleO                     |
 +-------------------------------+----------------------------------------------------------------------------+
 | integration                   | Group of people focusing on configuration management (eg: services)        |
++-------------------------------+----------------------------------------------------------------------------+
+| config-download               | config-download as the default deployment mechanism                        |
 +-------------------------------+----------------------------------------------------------------------------+
 
 .. note::
@@ -122,7 +122,7 @@ Primary author:
 Milestones
 ----------
 
-Ocata-1
+Ongoing
 
 Work Items
 ----------
