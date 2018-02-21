@@ -1,4 +1,4 @@
-#CI Team Structure
+CI Team Structure
 =================
 
 Problem Description
@@ -72,6 +72,18 @@ the Rover can not manage alone.
   * keep the Trello board updated daily
       * One can point to Trello cards in stand up meetings for status
 
+The Squads
+^^^^^^^^^^
+The squads operate as a subunit of the sprint team.  Each squad will operate
+with the same process and procedures and are managed by the team catalyst.
+
+  * Current Squads
+     * CI
+        * Responsible for the TripleO CI system ( non-infra ) and build
+          verification.
+     * Tempest
+        * Responsible for tempest development.
+
 Team Leaders
 ------------
 
@@ -104,7 +116,7 @@ Each squad has a UA and they share a TC. Both contribute to Ruck and Rover rotat
 
 Current Leaders for Rocky
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  * team catalyst (ci, tempest) - Matt Young (halcyondude@gmail.com)
+  * team catalyst (ci, tempest) - Matt Young
   * user advocate (ci)          - Gabriele Cerami
   * user advocate (tempest)     - Chandan Kumar
 
@@ -117,17 +129,16 @@ added to the technical debt column of Trello.
 **Note:** Each sprint needs a clear definition of done that is documented in
 the epic used for the sprint.
 
-Sprint Start ( Day 1 ) - Maximum time of 2.5 hours
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Sprint Start ( Day 1 ) - 2.5 hours
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-  * Sprints are two weeks in length
+  * Sprints are three weeks in length
   * A planning meeting is attended by the entire team including the Ruck and
     Rover
   * Review PTO
-  * Assign Ruck and Rover positions
   * Review any meetings that need to be covered by the Ruck/Rover
   * The UA will present options for the sprint epic
-  * Discuss the epic, lightly breaking each one down (30 minutes)
+  * Discuss the epic, lightly breaking each one down
   * Vote on an epic
   * The vote can be done using a doodle form
   * Break down the sprint epic into cards
@@ -137,28 +148,32 @@ Sprint Start ( Day 1 ) - Maximum time of 2.5 hours
         information for an engineer with little to no background with the task.
 
 
-Sprint End ( Day 10 ) - Maximum time of 2.5 hours
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  * Retrospective ( 30 min, can be extended to 1 hour )
+Sprint End ( Day 15 ) - 2.5 hours
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  * Retrospective
       * team members, ruck and rover only
   * Document any technical debt left over from the sprint
-  * Gerrit Review meeting ( 30 min )
-  * Sprint demo ( 30 min )
-  * Ruck / Rover hand off ( 15 min )
-  * TripleO Community CI meeting ( 30 - 60 min )
-  * Office hours on irc ( 60 min )
+  * Ruck / Rover hand off
+  * Assign Ruck and Rover positions
+  * Sprint demo - when available
+  * Office hours on irc
 
-Scrum meetings
-^^^^^^^^^^^^^^
+Scrum meetings - 30 Min
+^^^^^^^^^^^^^^^^^^^^^^^
+  * Planning meeting, video conference
+  * Sprint End, video and irc #oooq on freenode
   * 2 live video conference meetings per week
-     * sprint stand up ( 30 min )
+     * sprint stand up
+  * Other days, post status to the team's Trello board and/or cards
 
-Bug triage - Maximum time of 1 hour
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- * Every two weeks
- * Team Catalist, User Advocate, Ruck and Rover must attend. The other team
-   members are optional
- * Review all the bugs related to Quickstart or CI opened and take action
+
+TripleoO CI Community meeting
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  * A community meeting should be held once a week.
+  * The meeting should ideally be conveniently scheduled immediately after
+    the TripleO community meeting on #tripleo (freenode)
+  * The CI meeting should be announced as part of the TripleO community meeting
+    to encourage participation.
 
 Alternatives & History
 ----------------------
@@ -222,8 +237,8 @@ Revision History
 
    * - Release Name
      - Description
-   * - Queens
-     - October 03 2017
+   * - Rocky
+     - April 16 2018
 
 .. note::
 
