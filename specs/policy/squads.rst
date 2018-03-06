@@ -94,6 +94,8 @@ the team is working on. The list below is subject to change as squads change.
 +-------------------------------+----------------------------------------------------------------------------+
 | config-download               | config-download as the default deployment mechanism                        |
 +-------------------------------+----------------------------------------------------------------------------+
+| security                      | Group of people focusing on security                                       |
++-------------------------------+----------------------------------------------------------------------------+
 
 .. note::
 
