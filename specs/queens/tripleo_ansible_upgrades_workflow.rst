@@ -17,7 +17,7 @@ During the Pike cycle the minor update and some parts of the major upgrade
 are significantly different to any previous cycle, in that they are *not* being
 delivered onto nodes via Heat stack update. Rather, Heat stack update is used
 to only collect, but not execute, the relevant ansible tasks defined in each
-of the the service manifests_ as upgrade_tasks_ or update_tasks_ accordingly.
+of the service manifests_ as upgrade_tasks_ or update_tasks_ accordingly.
 These tasks are then written as stand-alone ansible playbooks in the stack
 outputs_.
 
