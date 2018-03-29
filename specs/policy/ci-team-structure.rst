@@ -75,16 +75,16 @@ the Rover can not manage alone.
 Team Leaders
 ------------
 
-The team catalyst
-^^^^^^^^^^^^^^^^^
+The team catalyst (TC)
+^^^^^^^^^^^^^^^^^^^^^^
 The member of the team responsible organizing the group. The team will elect or
 appoint a team catalyst per release.
 
   * organize and plan sprint meetings
   * collect status and send status emails
 
-The user advocate
-^^^^^^^^^^^^^^^^^
+The user advocate (UA)
+^^^^^^^^^^^^^^^^^^^^^^
 The member of the team responsible for help to prioritize work.  The team will
 elect or appoint a user advocate per release.
 
@@ -92,10 +92,21 @@ elect or appoint a user advocate per release.
   * monitor the board during the sprint.
   * ensure the right work is being done.
 
-Current Leaders for Queens
+The Squads
+^^^^^^^^^^
+There are two squads on the CI team.
+
+  * tripleo ci
+  * tempest development
+
+Each squad has a UA and they share a TC. Both contribute to Ruck and Rover rotations.
+
+
+Current Leaders for Rocky
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  * team catalyst - Arx Cruz
-  * user advocate - Sagi Shnaidman
+  * team catalyst (ci, tempest) - Matt Young (halcyondude@gmail.com)
+  * user advocate (ci)          - Gabriele Cerami
+  * user advocate (tempest)     - Chandan Kumar
 
 Sprint Structure
 ^^^^^^^^^^^^^^^^
