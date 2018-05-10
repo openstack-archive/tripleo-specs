@@ -6,7 +6,7 @@ Goal
 ====
 
 Provide basic policy that core reviewers can apply to outstanding reviews. As
-always, it us up to the core reviewers discretion on whether a patch should or
+always, it is up to the core reviewers discretion on whether a patch should or
 should not be abandoned. This policy is just a baseline with some basic rules.
 
 Problem Description
@@ -47,15 +47,16 @@ preserve original authorship. Core reviewers should not abandon such changes.
 Restoration
 ===========
 
-If a change has been abandoned either by a core reviewer, anyone can request
-the restoration of the patch by asking a core reviewer on IRC in #tripleo on
-freenode or by sending a request to the openstack-dev mailing list. Should the
-patch again become stale it may be abandoned again.
+Feel free to restore your own patches. If a change has been abandoned
+by a core reviewer, anyone can request the restoration of the patch by
+asking a core reviewer on IRC in #tripleo on freenode or by sending a
+request to the openstack-dev mailing list. Should the patch again
+become stale it may be abandoned again.
 
 Alternative & History
 =====================
 
-This topic was previously brought up on the openstack mailinglist [1]_ along
+This topic was previously brought up on the openstack mailing list [1]_ along
 with proposed code to use for automated abandonment [2]_. Similar policies are
 used by the Puppet OpenStack group [3]_.
 
