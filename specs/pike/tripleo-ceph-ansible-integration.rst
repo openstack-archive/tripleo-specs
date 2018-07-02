@@ -281,7 +281,7 @@ to be triggered during initial deployment with TripleO follows:
    the same way that it handles any Heat resource that failed to be
    created. For example, because the workflow is idempotent, if the
    resource creation fails because the wrong parameter was passed or
-   becasue of a temporary network issue, the deployer could simply run
+   because of a temporary network issue, the deployer could simply run
    a stack-update the Mistral worklow would run again and if the
    issues which caused the first run to fail were resolved, the
    deployment should succeed. Similarly if a user updates a parameter,
