@@ -4,6 +4,14 @@
 Tripleo Project Specifications
 ==============================
 
+Stein Approved Specs:
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   specs/stein/*
+
 Rocky Approved Specs:
 
 .. toctree::
