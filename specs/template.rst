@@ -91,6 +91,29 @@ guidelines are a work in progress and are designed to help you identify
 security best practices.  For further information, feel free to reach out
 to the OpenStack Security Group at openstack-security@lists.openstack.org.
 
+Upgrade Impact
+--------------
+
+Describe potential upgrade impact on the system.
+
+* Is this change meant to become the default for deployments at some
+  point in the future? How do we migrate existing deployments to that
+  feature?
+
+* Can the system be upgraded to this feature using the upgrade hooks
+  provided by the composable services framework?
+
+* Describe any plans to deprecate configuration values or
+  features. (For example, if we change the directory name that
+  instances are stored in, how do we handle instance directories
+  created before the change landed?  Do we move them?  Do we have a
+  special case in the code? Do we assume that the operator will
+  recreate all the instances in their cloud?)
+
+* Please state anything that operators upgrading from the previous
+  release need to be aware of. Do they need to perform extra manual
+  operations?
+
 Other End User Impact
 ---------------------
 
@@ -121,14 +144,6 @@ that have not already been mentioned, such as:
 
 * Is this a change that takes immediate effect after its merged, or is it
   something that has to be explicitly enabled?
-
-* Please state anything that those doing continuous deployment, or those
-  upgrading from the previous release, need to be aware of. Also describe
-  any plans to deprecate configuration values or features.  For example, if we
-  change the directory name that instances are stored in, how do we handle
-  instance directories created before the change landed?  Do we move them?  Do
-  we have a special case in the code? Do we assume that the operator will
-  recreate all the instances in their cloud?
 
 Developer Impact
 ----------------
