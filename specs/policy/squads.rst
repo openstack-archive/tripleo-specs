@@ -94,6 +94,9 @@ the team is working on. The list below is subject to change as squads change.
 +-------------------------------+----------------------------------------------------------------------------+
 | security                      | Group of people focusing on security                                       |
 +-------------------------------+----------------------------------------------------------------------------+
+| edge                          | Group of people focusing on Edge/multi-site/multi-cloud                    |
+|                               | https://etherpad.openstack.org/p/tripleo-edge-squad-status                 |
++-------------------------------+----------------------------------------------------------------------------+
 
 .. note::
 
