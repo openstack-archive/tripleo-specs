@@ -92,8 +92,6 @@ the team is working on. The list below is subject to change as squads change.
 +-------------------------------+----------------------------------------------------------------------------+
 | integration                   | Group of people focusing on configuration management (eg: services)        |
 +-------------------------------+----------------------------------------------------------------------------+
-| config-download               | config-download as the default deployment mechanism                        |
-+-------------------------------+----------------------------------------------------------------------------+
 | security                      | Group of people focusing on security                                       |
 +-------------------------------+----------------------------------------------------------------------------+
 
