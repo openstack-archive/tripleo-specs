@@ -53,7 +53,7 @@ resolution of the bug.
   * Attends the sprint meetings, but is not responsible for any sprint work
   * Helps to triage incoming gerrit reviews
   * Responds to pings on irc #oooq / #tripleo
-  * If the Ruck is overwhelmed with any of the their responsibilities the
+  * If the Ruck is overwhelmed with any of their responsibilities the
     Rover is the primary backup.
   * For identification, use the irc nick $user|rover
 
