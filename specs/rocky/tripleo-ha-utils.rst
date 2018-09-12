@@ -84,16 +84,16 @@ evacuate instances after being configured for Instance HA?". And the answer we
 want is YES or NO.
 
 * *tripleo-validations*: the most logical place to put this, at least
-looking at the name, would be tripleo-validations. By talking with folks
-working on it, it came out that the meaning of tripleo-validations project is
-not doing disruptive tests. Integrating this stuff would be out of scope.
+   looking at the name, would be tripleo-validations. By talking with folks
+   working on it, it came out that the meaning of tripleo-validations project is
+   not doing disruptive tests. Integrating this stuff would be out of scope.
 
 * *tripleo-quickstart-extras*: apart from the fact that this is not
-something meant just for quickstart (the project supports infrared and
-"plain" environments as well) even if we initially started there, in the
-end, it came out that nobody was looking at the patches since nobody was
-able to verify them. The result was a series of reviews stuck forever.
-So moving back to extras would be a step backward.
+   something meant just for quickstart (the project supports infrared and
+   "plain" environments as well) even if we initially started there, in the
+   end, it came out that nobody was looking at the patches since nobody was
+   able to verify them. The result was a series of reviews stuck forever.
+   So moving back to extras would be a step backward.
 
 Other End User Impact
 ---------------------

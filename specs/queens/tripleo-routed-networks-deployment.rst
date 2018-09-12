@@ -191,7 +191,7 @@ relay/router host, thus acting exactly like routing switches.
 **Problem #2: Neutron's model for a segmented network that spans multiple L2
 domains uses the segment object to allow multiple subnets to be assigned to
 the same network. This functionality needs to be integrated into the
-Undercloud.
+Undercloud.**
 
 Possible Solutions, Ideas, or Approaches:
 
