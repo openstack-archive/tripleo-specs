@@ -40,7 +40,7 @@ circumstances:
 * Requirements updates proposed by the bot.
 * Translation updates proposed by the bot. (See also `reviewing
   translation imports
-  <http://docs.openstack.org/developer/i18n/reviewing-translation-import.html>`_.)
+  <https://docs.openstack.org/i18n/latest/reviewing-translation-import.html>`_.)
 
 Co-author +2
 ------------
@@ -94,11 +94,11 @@ should be sent to openstack-dev referring to it.
 References
 ==========
 
-Existing wiki on review guidlines:
+Existing wiki on review guidelines:
 https://wiki.openstack.org/wiki/TripleO/ReviewGuidelines
 
 Previous spec that implemented some of this policy:
-http://specs.openstack.org/openstack/tripleo-specs/specs/kilo/tripleo-review-standards.html
+https://specs.openstack.org/openstack/tripleo-specs/specs/kilo/tripleo-review-standards.html
 
 Revision History
 ================
@@ -119,4 +119,4 @@ Revision History
 
   This work is licensed under a Creative Commons Attribution 3.0
   Unported License.
-  http://creativecommons.org/licenses/by/3.0/legalcode
+  https://creativecommons.org/licenses/by/3.0/legalcode
