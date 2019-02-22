@@ -78,14 +78,14 @@ The following subcommands should be supported:
 
 * in addition, common options for all the subcommands:
 
-  * ``--extra-playbooks``: path to a local directory containing validation
-    playbook maintained by the operator, or swift directory containing extra
-    validation playbooks.
+  * ``--extra-roles``: path to a local directory containing validation
+    roles maintained by the operator, or swift directory containing extra
+    validation roles.
   * ``--output``: points to a valid Ansible output_callback, such as the native
     *json*, or custom *validation_output*. The default one should be the latter
     as it renders a "human readable" output. More callbacks can be added later.
 
-The ``--extra-playbooks`` must support both local path and remote swift
+The ``--extra-roles`` must support both local path and remote swift
 container, since the custom validation support will push any validation to a
 dedicated swift directory.
 
@@ -94,13 +94,13 @@ present and accepting requests (meaning the Undercloud is most probably
 deployed), the validator has to use it by default. If no Mistral is present, it
 must fallback on the ansible-playbook.
 
-The validations should be in the form of Ansible playbook, in order to be
+The validations should be in the form of Ansible roles, in order to be
 easily accessed from Mistral as well (as it is currently the case). It will
 also allow to get a proper documentation, canvas and gives the possibility to
-validate the playbook before running it (ensuring there are metadata, output,
+validate the role before running it (ensuring there are metadata, output,
 and so on).
 
-We might also create some dedicated playbooks in order to make a kind of
+We might also create some dedicated roles in order to make a kind of
 "self validation", ensuring we actually can run the validations (network,
 resources, and so on).
 
@@ -109,7 +109,10 @@ be able to use those same workflows of course, but also run at least some
 validations directly via ansible, especially when we want to validate the
 undercloud environment before we even deploy it.
 
-In the end, all the default validation playbooks should be in one and only one
+Also, in order to avoid Mistral modification, playbooks including validation
+roles will be created.
+
+In the end, all the default validation roles should be in one and only one
 location: tripleo-validations. The support for "custom validations" being added,
 such custom validation should also be supported (see references for details).
 
@@ -118,9 +121,9 @@ must be created and documented. Of course, one validation can be part of
 multiple groups.
 
 In addition, a proper documentation with examples describing the Good Practices
-regarding the playbooks content, format and outputs should be created.
+regarding the roles content, format and outputs should be created.
 
-For instance, a playbook should contain a description, a "human readable error
+For instance, a role should contain a description, a "human readable error
 output", and if applicable a possible solution.
 
 Proper testing for the default validations (i.e. those in tripleo-validations)
@@ -228,7 +231,7 @@ Work Items
 
 * Decide if we integrate ansible-runner as a dependency (needs to be packaged).
 
-* Implement the undercloud_preflight validations as Ansible playbook.
+* Implement the undercloud_preflight validations as Ansible roles.
 
 * Implement a proper way to call Ansible from the tripleoclient code.
 
