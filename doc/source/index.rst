@@ -4,6 +4,14 @@
 Tripleo Project Specifications
 ==============================
 
+Train Approved Specs:
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   specs/train/*
+
 Stein Approved Specs:
 
 .. toctree::
