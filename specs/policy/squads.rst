@@ -78,15 +78,9 @@ the team is working on. The list below is subject to change as squads change.
 +===============================+============================================================================+
 | ci                            | Group of people focusing on Continuous Integration tooling and system      |
 +-------------------------------+----------------------------------------------------------------------------+
-| ui/cli                        | Group of people focusing on TripleO UI and CLI                             |
-+-------------------------------+----------------------------------------------------------------------------+
 | upgrade                       | Group of people focusing on TripleO upgrades                               |
 +-------------------------------+----------------------------------------------------------------------------+
 | validations                   | Group of people focusing on TripleO validations tooling                    |
-+-------------------------------+----------------------------------------------------------------------------+
-| workflows                     | Group of people focusing on TripleO Workflows                              |
-+-------------------------------+----------------------------------------------------------------------------+
-| containers                    | Group of people focusing on TripleO deployed in containers                 |
 +-------------------------------+----------------------------------------------------------------------------+
 | networking                    | Group of people focusing on networking bits in TripleO                     |
 +-------------------------------+----------------------------------------------------------------------------+
