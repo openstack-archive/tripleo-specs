@@ -91,6 +91,9 @@ the team is working on. The list below is subject to change as squads change.
 | edge                          | Group of people focusing on Edge/multi-site/multi-cloud                    |
 |                               | https://etherpad.openstack.org/p/tripleo-edge-squad-status                 |
 +-------------------------------+----------------------------------------------------------------------------+
+| transformation                | Group of people focusing on converting heat templates / puppet to Ansible  |
+|                               | within the tripleo-ansible framework                                       |
++-------------------------------+----------------------------------------------------------------------------+
 
 .. note::
 
