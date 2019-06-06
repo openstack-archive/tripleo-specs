@@ -37,6 +37,8 @@ Tags
 +-------------------------------+----------------------------------------------------------------------------+
 | ci                            | A bug affecting the Continuous Integration system                          |
 +-------------------------------+----------------------------------------------------------------------------+
+| ci-reproducer                 | A bug affecting local recreation of Continuous Integration environments    |
++-------------------------------+----------------------------------------------------------------------------+
 | config-agent                  | A bug affecting os-collect-config, os-refresh-config, os-apply-config      |
 +-------------------------------+----------------------------------------------------------------------------+
 | containers                    | A bug affecting container based deployments                                |
