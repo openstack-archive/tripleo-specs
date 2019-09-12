@@ -246,7 +246,7 @@ approaches may be considered, such as setting up OVS tunnels.
 Refactored**
 
 The current isolated networking templates use parameters in nested stacks to
-define the IP information for each nework. There is no room in the current
+define the IP information for each network. There is no room in the current
 schema to define multiple subnets per network, and no way to configure the
 routers for each network. These values are provided by single parameters.
 
