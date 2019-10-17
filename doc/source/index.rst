@@ -4,6 +4,14 @@
 Tripleo Project Specifications
 ==============================
 
+Ussuri Approved Specs:
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   specs/ussuri/*
+
 Train Approved Specs:
 
 .. toctree::
