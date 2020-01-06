@@ -43,6 +43,8 @@ Tags
 +-------------------------------+----------------------------------------------------------------------------+
 | containers                    | A bug affecting container based deployments                                |
 +-------------------------------+----------------------------------------------------------------------------+
+| depcheck                      | A bug affecting 3rd party dependencies, for example ceph-ansible, podman   |
++-------------------------------+----------------------------------------------------------------------------+
 | deployment-time               | A bug affecting deployment time                                            |
 +-------------------------------+----------------------------------------------------------------------------+
 | documentation                 | A bug that is specific to documentation issues                             |
