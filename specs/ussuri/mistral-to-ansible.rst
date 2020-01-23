@@ -22,7 +22,7 @@ Problem Description
 Mistral was originally added to take the place of an “API” and provide common
 logic for tripleoclient and TripleO UI. After the TripleO UI was removed, the
 only consumer of Mistral is tripleoclient. This means that Mistral now adds
-unnecessary complexity.
+unnecessary overhead and complexity.
 
 
 Proposed Change
@@ -56,6 +56,7 @@ Security Impact
   therefore they shouldn't create a new attack vector.
 
 
+
 Upgrade Impact
 --------------
 
@@ -65,7 +66,7 @@ Upgrade Impact
 * Older versions of tripleoclient will no longer work with the undercloud as
   they will expect Mistral to be present.
 
-* Most of the data in Mistral in ephemeral, but some longer term data is stored
+* Most of the data in Mistral is ephemeral, but some longer term data is stored
   in Mistral environments. This data will likely be moved to Swift.
 
 
@@ -73,13 +74,13 @@ Other End User Impact
 ---------------------
 
 The output of CLI commands will change format. For example, the Mistral
-workflow ID will no longer be included and other Ansible specific output may be
-included. Where possible we will favour streaming Ansible output to the user,
-making tripleoclient very light and transparent
+workflow ID will no longer be included and other Ansible specific output will
+be included. Where possible we will favour streaming Ansible output to the
+user, making tripleoclient very light and transparent.
 
-Some CLI commands, such as introspection will need to fundamentally change their
-output. Currently they send real time updates and progress to the client with
-Zaqar. Despite moving the execution locally, we are unable to easily get
+Some CLI commands, such as introspection will need to fundamentally change
+their output. Currently they send real time updates and progress to the client
+with Zaqar. Despite moving the execution locally, we are unable to easily get
 messages from a Ansible playbook while it is running. This means the user may
 need to wait a long time before they get any feedback.
 
@@ -87,9 +88,9 @@ need to wait a long time before they get any feedback.
 Performance Impact
 ------------------
 
-There is no expected performance impact as the workflow should be largely the
-same. However, the Ansible playbooks will be executed where the user runs the
-CLI rather than by the Mistral server. This could then be slower or faster
+There is no expected performance impact as the internal logic should be largely
+the same. However, the Ansible playbooks will be executed where the user runs
+the CLI rather than by the Mistral server. This could then be slower or faster
 depending on the resources available to the machine and the network connection
 to the undercloud.
 
@@ -124,15 +125,19 @@ Primary assignee:
   d0ugal
 
 Other contributors:
-  apetrich
-  ekultails
-  sshnaidm
-  cloudnull
+
+- apetrich
+- ekultails
+- sshnaidm
+- cloudnull
 
 Work Items
 ----------
 
-- Migrate each Mistral workflows to Ansible playbooks.
+Storyboard is being used to track this work:
+  https://storyboard.openstack.org/#!/board/208
+
+- Migrate the Mistral workflows to Ansible playbooks.
 
 - Migrate or replace custom Mistral actions to Ansible native components.
 
@@ -144,6 +149,27 @@ Work Items
   tripleo-ansible. This will allow us to generate API documentation for all
   playbooks committed to tripleo-ansible, which will include our new `cli`
   prefixed playbooks.
+
+Converting Mistral Workflows to Ansible
+***************************************
+
+For each Mistral workflow the following steps need to be taken to port them
+to Ansible.
+
+- Re-write the Mistral workflow logic in Ansible, reusing the Mistral Python
+  actions where appropriate.
+
+- Update python-tripleoclient to use the new Ansible playbooks. It should
+  prefer showing the native Ansible output rather than attempting to replicate
+  the previous output.
+
+- The Workflows and related code should be deleted from tripleo-common.
+
+A complete example can be seen for the `openstack undercloud backup` command.
+
+- `Ansible Playbook <https://opendev.org/openstack/tripleo-ansible/src/branch/master/tripleo_ansible/playbooks/cli-undercloud-backup.yaml>`_
+- `Updated tripleoclient <https://review.opendev.org/#/c/665690/>`_
+- `Removal of all workflow code <https://review.opendev.org/#/c/703966/>`_
 
 
 Dependencies
@@ -175,3 +201,5 @@ References
 * https://bugs.launchpad.net/tripleo/+bugs?field.tag=mistral-removal
 
 * http://lists.openstack.org/pipermail/openstack-discuss/2019-October/010384.html
+
+* https://storyboard.openstack.org/#!/board/208
