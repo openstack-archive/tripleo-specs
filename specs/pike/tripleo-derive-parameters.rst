@@ -438,4 +438,3 @@ References
 .. [3] `<https://github.com/Jaganathancse/Jagan/tree/master/mistral-workflow>`_
 .. [4] `nova_mem_cpu_calc.py <https://github.com/RHsyseng/hci/blob/master/scripts/nova_mem_cpu_calc.py>`_
 .. [5] `NUMA Topology in introspection data (ironic-python-agent) <https://review.openstack.org/#/c/424729/>`_
-.. [6] `Sample Environment File for Derive Params <https://review.openstack.org/#/c/457874/1/environments/derive-params/derive_parameters.yaml>`_

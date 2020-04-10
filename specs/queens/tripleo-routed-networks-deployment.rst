@@ -718,9 +718,7 @@ References
 
 .. [0] `Review: TripleO Heat Templates: Tripleo routed networks ironic inspector, and Undercloud <https://review.openstack.org/#/c/437544>`_
 .. [1] `Spec: Routed Networks for Neutron <https://specs.openstack.org/openstack/neutron-specs/specs/newton/routed-networks.html>`_
-.. [2] `Spec: Override Network Names in TripleO Isolated Networking <https://blueprints.launchpad.net/tripleo/+spec/override-network-name>`_
 .. [3] `Review: Modify os-net-config to make changes without bouncing interface <https://review.openstack.org/#/c/152732/>`_
-.. [4] `Review: Add LLDP processing hook and new CLI commands <https://review.openstack.org/#/c/374381/>`_
 .. [5] `Blueprint: Modify TripleO Ironic Inspector to PXE Boot Via DHCP Relay <https://blueprints.launchpad.net/tripleo/+spec/tripleo-routed-networks-ironic-inspector>`_
 .. [6] `Spec: Modify TripleO Ironic Inspector to PXE Boot Via DHCP Relay <https://review.openstack.org/#/c/421011>`_
 .. [7] `Blueprint: User-specifiable Control Plane IP on TripleO Routed Isolated Networks <https://blueprints.launchpad.net/tripleo/+spec/tripleo-routed-networks-deployment>`_

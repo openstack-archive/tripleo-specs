@@ -513,7 +513,6 @@ References
 ==========
 
 .. [0] `Blueprint: TripleO Routed Networks for Deployments <https://blueprints.launchpad.net/tripleo/+spec/tripleo-routed-networks-deployment>`_
-.. [1] `Spec: Routed Networks for Neutron <https://review.openstack.org/#/c/225384/6/specs/mitaka/routed-networks.rst>`_
 .. [2] `Spec: User-specifiable Control Plane IP on TripleO Routed Isolated Networks <https://review.openstack.org/#/c/421010/>`_
 .. [3] `Review: Modify os-net-config to make changes without bouncing interface <https://review.openstack.org/#/c/152732/>`_
 .. [4] `Review: Add support for node groups in NetConfigDataLookup <https://review.openstack.org/#/c/406641/>`_

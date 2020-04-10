@@ -24,7 +24,7 @@ Proposed Change
 Tracking Code Tech Debt with Bugs
 ---------------------------------
 
-Intentionally created tech debt items should have a bug[1]_ created with the
+Intentionally created tech debt items should have a bug [1]_ created with the
 `tech-debt` tag added to it. Additionally the commit message of the change
 should reference this `tech-debt` bug and if possible a comment should be added
 into the code referencing who put it in there.

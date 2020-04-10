@@ -482,8 +482,5 @@ References
 .. [3] https://github.com/openstack/tripleo-heat-templates/blob/master/nova-compute-instance.yaml
 .. [4] http://docs.openstack.org/developer/heat/template_guide/environment.html
 .. [5] http://docs.openstack.org/developer/heat/template_guide/openstack.html#OS::Heat::ResourceGroup
-.. [6] http://docs.openstack.org/developer/heat/template_guide/openstack.html#OS::Heat::RandomString
-.. [7] http://lists.openstack.org/pipermail/openstack-dev/2014-July/040115.html
 .. [8] https://review.openstack.org/#/c/81666/
 .. [9] https://review.openstack.org/#/c/93319/
-.. [10] http://docs.openstack.org/developer/heat/template_guide/hot_spec.html#str-replace

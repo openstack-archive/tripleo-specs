@@ -198,7 +198,7 @@ These tasks will then be collated into role specific Ansible playbooks via the
 RoleConfig output of the `overcloud` heat template, with step and release
 variables being fed in to ensure tasks are executed in the correct order.
 
-As with `major upgrades` [8] a new mistral workflow and tripleoclient command
+As with `major upgrades` [8]_ a new mistral workflow and tripleoclient command
 will be introduced to generate and execute the associated Ansible tasks.
 
 .. code-block:: bash

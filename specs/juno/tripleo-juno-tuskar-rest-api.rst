@@ -607,7 +607,5 @@ The REST API documentation will need to be updated accordingly.
 References
 ==========
 
-.. [1] https://wiki.openstack.org/wiki/TripleO/TuskarJunoPlanning/TemplateBackend
-.. [2] https://etherpad.openstack.org/p/juno-summit-tripleo-tuskar-planning
 .. [3] https://review.openstack.org/#/c/97553/
 .. [4] https://review.openstack.org/#/c/97939/
