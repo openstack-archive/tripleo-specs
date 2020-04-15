@@ -3,6 +3,13 @@
 ==============================
 Tripleo Project Specifications
 ==============================
+Victoria Approved Specs:
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   specs/victoria/*
 
 Ussuri Approved Specs:
 
