@@ -25,13 +25,18 @@ extensions = [
 ]
 
 # Feed configuration for yasfb
-feed_base_url = 'http://specs.openstack.org/openstack/tripleo-specs'
+feed_base_url = 'https://specs.openstack.org/openstack/tripleo-specs'
 feed_author = 'OpenStack TripleO Team'
 
 exclude_patterns = [
     '**/template.rst',
     '**/policy-template.rst',
 ]
+
+# openstackdocstheme options
+openstackdocs_repo_name = 'openstack/tripleo-specs'
+openstackdocs_bug_project = 'tripleo'
+openstackdocs_bug_tag = ''
 
 # autodoc generation is a bit aggressive and a nuisance when doing heavy
 # text edit cycles.
@@ -55,7 +60,7 @@ add_function_parentheses = True
 add_module_names = True
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
+pygments_style = 'native'
 
 # -- Options for HTML output --------------------------------------------------
 
