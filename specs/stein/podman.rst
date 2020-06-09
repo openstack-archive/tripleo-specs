@@ -71,7 +71,7 @@ in TripleO shouldn't be that painful.
 It is proposed to add support for Podman CLI (beside Docker CLI) in TripleO
 to manage the creation, deletion, inspection of our containers.
 We would have a new parameter called ContainerCli in TripleO, that if set to
-'podman', will make the container provisionning done with Podman CLI and not
+'podman', will make the container provisioning done with Podman CLI and not
 Docker CLI.
 
 Because there is no daemon, there are some problems that we needs to solve:
