@@ -3,6 +3,15 @@
 ==============================
 Tripleo Project Specifications
 ==============================
+
+Wallaby Approved Specs:
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   specs/wallaby/*
+
 Victoria Approved Specs:
 
 .. toctree::
