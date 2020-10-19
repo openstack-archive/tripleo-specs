@@ -96,7 +96,6 @@ Some advantages of using this architecture with separate subnets per rack are:
 This topology is significantly different from the shared-everything approach that
 TripleO takes today.
 
-====================
 Problem Descriptions
 ====================
 

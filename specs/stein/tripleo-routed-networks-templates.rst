@@ -37,7 +37,6 @@ set into multiple parts [0]_. This blueprint presents the problems which are
 applicable to this blueprint below.
 
 
-====================
 Problem Descriptions
 ====================
 

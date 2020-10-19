@@ -32,7 +32,6 @@ For a detailed description of the desired topology and problems being
 addresssed, please reference the parent blueprint
 triplo-routed-networks-deployment [0]_.
 
-====================
 Problem Descriptions
 ====================
 
