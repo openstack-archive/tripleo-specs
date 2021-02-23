@@ -133,7 +133,7 @@ respect to managing instances, there would be no reason that the
 workload itself could not perform adequately once running and each
 workload site would have a smaller footprint.
 
-.. image:: ../../images/split-controlplane/ceph-details.png
+.. image:: ../../../../images/split-controlplane/ceph-details.png
    :height: 445px
    :width: 629px
    :alt: Diagram of an example control site with multiple workload sites
