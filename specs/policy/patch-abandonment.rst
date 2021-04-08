@@ -31,6 +31,10 @@ If a proposed patch becomes stale by ending up with a -1 from CI for 90 days
 and no activity to resolve the issues, a core reviewer should abandon the
 change with a reference to this policy.
 
+If a proposed patch with no activity for 90 days is in merge conflict, even
+with a +1 from CI, a core reviewer should abandon the change with a reference
+to this policy.
+
 When NOT to Abandon
 ===================
 
