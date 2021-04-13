@@ -4,6 +4,14 @@
 Tripleo Project Specifications
 ==============================
 
+Xena Approved Specs:
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   specs/xena/*
+
 Wallaby Approved Specs:
 
 .. toctree::
