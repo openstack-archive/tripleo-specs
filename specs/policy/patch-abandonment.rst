@@ -53,7 +53,7 @@ Restoration
 
 Feel free to restore your own patches. If a change has been abandoned
 by a core reviewer, anyone can request the restoration of the patch by
-asking a core reviewer on IRC in #tripleo on freenode or by sending a
+asking a core reviewer on IRC in #tripleo on OFTC or by sending a
 request to the openstack-dev mailing list. Should the patch again
 become stale it may be abandoned again.
 

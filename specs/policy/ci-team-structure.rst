@@ -171,7 +171,7 @@ TripleoO CI Community meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   * A community meeting should be held once a week.
   * The meeting should ideally be conveniently scheduled immediately after
-    the TripleO community meeting on #tripleo (freenode)
+    the TripleO community meeting on #tripleo (OFTC)
   * The CI meeting should be announced as part of the TripleO community meeting
     to encourage participation.
 
