@@ -4,6 +4,14 @@
 Tripleo Project Specifications
 ==============================
 
+Yoga Approved Specs:
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   specs/yoga/*
+
 Xena Approved Specs:
 
 .. toctree::
