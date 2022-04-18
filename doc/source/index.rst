@@ -4,6 +4,14 @@
 Tripleo Project Specifications
 ==============================
 
+Zed Approved Specs:
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   specs/zed/*
+
 Yoga Approved Specs:
 
 .. toctree::
