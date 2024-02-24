@@ -1,24 +1,10 @@
-========================
-Team and repository tags
-========================
+This project is no longer maintained.
 
-.. image:: http://governance.openstack.org/badges/tripleo-specs.svg
-    :target: http://governance.openstack.org/reference/tags/index.html
+The contents of this repository are still available in the Git
+source code management system.  To see the contents of this
+repository before it reached its end of life, please check out the
+previous commit with "git checkout HEAD^1".
 
-.. Change things from this point on
-
-===============================
-tripleo-specs
-===============================
-
-TripleO specs repository
-
-* Free software: Apache license
-* Documentation: https://specs.openstack.org/openstack/tripleo-specs
-* Source: http://git.openstack.org/cgit/openstack/tripleo-specs
-* Bugs: http://bugs.launchpad.net/tripleo
-
-Features
---------
-
-* TODO
+For any further questions, please email
+openstack-discuss@lists.openstack.org or join #openstack-dev on
+OFTC.
